@@ -1,0 +1,11 @@
+{
+  "name": "haphapijoijoi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ynp7/haphapijoijoi.git",
+  "author": "Timothy Pew <mrlasers@mrlasers.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
+}
