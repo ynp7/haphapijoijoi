@@ -6,6 +6,6 @@
   "author": "Timothy Pew <mrlasers@mrlasers.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "node index.js"
   }
 }
