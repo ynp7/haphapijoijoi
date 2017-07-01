@@ -5,6 +5,10 @@
   "repository": "https://github.com/ynp7/haphapijoijoi.git",
   "author": "Timothy Pew <mrlasers@mrlasers.com>",
   "license": "MIT",
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
   "scripts": {
     "start": "node index.js"
   },
