@@ -1,7 +1,7 @@
 {
   "name": "haphapijoijoi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "https://github.com/ynp7/haphapijoijoi.git",
   "author": "Timothy Pew <mrlasers@mrlasers.com>",
   "license": "MIT",
@@ -10,9 +10,17 @@
     "npm": "*"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js",
+    "build": "webpack --optimize-minimize"
   },
   "dependencies": {
-    "hapi": "^16.4.3"
+    "hapi": "^16.4.3",
+    "inert": "^4.2.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "webpack": "^3.0.0"
   }
 }
