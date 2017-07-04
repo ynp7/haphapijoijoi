@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --optimize-minimize"
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --config webpack.config.dev.js"
   },
   "dependencies": {
     "hapi": "^16.4.3",
@@ -19,8 +20,11 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
+    "babel-preset-es2017": "^6.24.1",
+    "extract-text-webpack-plugin": "^2.1.2",
     "webpack": "^3.0.0"
   }
 }
