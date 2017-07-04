@@ -1,4 +1,6 @@
-const _ = require('lodash')
+// const _ = require('lodash')
+
+const steelz = require('./styles.less')
 
 const component = () => {
   var element = document.createElement('div')
