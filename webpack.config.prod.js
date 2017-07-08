@@ -16,11 +16,11 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'
@@ -52,22 +52,6 @@ module.exports = {
         }],
         fallback: 'style-loader'
       })
-      // use: extractLess.extract({
-      //   use: [{
-      //     loader: 'css-loader'
-      //   },{
-      //     loader: 'less-loader'
-      //   }],
-      //   fallback: 'style-loader'
-      // })
     }]
-    // loaders: [{
-    //   test: /\.css$/,
-    //   loaders: ['style-loader', 'css-loader']
-    // }, {
-    //   test: /\.js$/,
-    //   loaders: ['babel-loader'],
-    //   include: path.join(__dirname, 'src')
-    // }]
   }
 }

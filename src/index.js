@@ -2,11 +2,13 @@
 
 const steelz = require('./styles.less')
 
+console.log(process.env.NODE_ENV)
+
 const component = () => {
   var element = document.createElement('div')
   process.env.NODE_ENV === 'production'
-    ? element.innerHTML = 'Hello from the future of Webpack, Bundle!'
-    : element.innerHTML = 'PRODUCTION SERVER'
+    ? element.innerHTML = 'BookEDit, coming soon!'
+    : element.innerHTML = '=== PRODUCTION SERVER ==='
   return element
 }
 
