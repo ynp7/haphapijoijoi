@@ -1,4 +1,4 @@
-// const _ = require('lodash')
+const _join = require('lodash').join
 
 const steelz = require('./styles.less')
 
@@ -7,8 +7,8 @@ console.log(process.env.NODE_ENV)
 const component = () => {
   var element = document.createElement('div')
   process.env.NODE_ENV === 'production'
-    ? element.innerHTML = 'BookEDit, coming soon!'
-    : element.innerHTML = '=== PRODUCTION SERVER ==='
+    ? element.innerHTML = _join(['===', 'PRODUCTION SERVER', '==='], ' ')
+    : element.innerHTML = _join(['===', 'DEVELOPMENT SERVER', '==='], ' ')
   return element
 }
 
