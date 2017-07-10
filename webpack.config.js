@@ -57,13 +57,11 @@ function getRules() {
     test: /\.less$/,
     use: extractLess.extract({
       use: [{
-        loader: 'style-loader'
-      },{
         loader: 'css-loader'
       },{
         loader: 'less-loader'
       }],
-      // fallback: 'style-loader'
+      fallback: 'style-loader'
     })
   }]
 
