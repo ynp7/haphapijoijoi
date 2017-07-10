@@ -19,6 +19,7 @@ function getPlugins() {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+    new webpack.NamedModulesPlugin(),
     extractLess
   ]
 
@@ -32,6 +33,10 @@ function getPlugins() {
       }),
       new webpack.optimize.OccurrenceOrderPlugin()
     )
+  } else {
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin()
+    )
   }
 
   return plugins
@@ -40,7 +45,7 @@ function getPlugins() {
 function getRules() {
   const rules = [{
     test: /\.js$/,
-    use: ['babel-loader'],
+    use: ['react-hot-loader/webpack', 'babel-loader'],
     include: path.join(__dirname, 'src')
   },{
     test: /\.css$/,
@@ -52,21 +57,28 @@ function getRules() {
     test: /\.less$/,
     use: extractLess.extract({
       use: [{
+        loader: 'style-loader'
+      },{
         loader: 'css-loader'
       },{
         loader: 'less-loader'
       }],
-      fallback: 'style-loader'
+      // fallback: 'style-loader'
     })
   }]
 
   return rules
 }
 
-const packMan = {
-  entry: './src/',
+const config = {
+  entry: {
+    'app': [
+      'react-hot-loader/patch',
+      './src/index'
+    ]
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -74,7 +86,15 @@ const packMan = {
 
   module: {
     rules: getRules()
+  },
+
+  devServer: {
+    hot: true,
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   }
 }
 
-module.exports = packMan
+// console.log(JSON.stringify(packMan.plugins,null,2))
+
+module.exports = config

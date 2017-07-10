@@ -1,5 +1,7 @@
 # my stuff to ignore
-
+dist/*.js
+dist/*.html
+dist/*.css
 
 # Logs
 logs
